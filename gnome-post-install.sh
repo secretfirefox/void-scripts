@@ -29,11 +29,11 @@ sudo ln -s /etc/sv/NetworkManager /var/service
 
 # Install some recommended packages
 
-curl wget git xz unzip zip nano vim gptfdisk xtools mtools mlocate ntfs-3g fuse-exfat bash-completion linux-headers gtksourceview4 ffmpeg mesa-vdpau mesa-vaapi htop neofetch numlockx 7zip 
+sudo xbps-install curl wget git xz unzip zip nano vim gptfdisk xtools mtools mlocate ntfs-3g fuse-exfat bash-completion linux-headers gtksourceview4 ffmpeg mesa-vdpau mesa-vaapi htop neofetch numlockx 7zip -y
 
 # Install some development packages (optional but recommended)
 
-sudo xbps-install autoconf automake bison m4 make libtool flex meson ninja optipng sassc
+sudo xbps-install autoconf automake bison m4 make libtool flex meson ninja optipng sassc -y
 
 # Install the Desktop Environment
 
