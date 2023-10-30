@@ -5,11 +5,11 @@
 
 # Make sure the system is updated
 
-sudo xbps-install -Su
+sudo xbps-install -Suy
 
 # Add the non-free repository
 
-sudo xbps-install -Rs void-repo-nonfree
+sudo xbps-install -Rs void-repo-nonfree -y
 
 # Install dbus, elogind, and Network Manager
 
@@ -41,7 +41,7 @@ sudo xbps-install xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-g
 
 # Install PulseAudio and Pipewire/Wireplumber
 
-sudo xbps-install pulseaudio pulseaudio-utils pulsemixer alsa-plugins-pulseaudio pipewire wireplumber
+sudo xbps-install pulseaudio pulseaudio-utils pulsemixer alsa-plugins-pulseaudio pipewire wireplumber -y
 
 # Install cronie and enable its service
 

@@ -3,15 +3,17 @@
 # Its purpose is to install Gnome Desktop Environment on your Void Linux.
 # Enjoy!
 
+# Install wayland and xorg display servers
+
+sudo xbps-install xorg wayland -y
+
 # Install the Desktop Environment
 
-sudo xbps-install xorg wayland gnome gdm
+sudo xbps-install xorg wayland gnome gdm -y
 
 # Enable the Gnome Display Manager (GDM)
-# Test GDM to make sure it is working (press Ctrl Alt F1 to return to TTY)
 
 sudo ln -s /etc/sv/gdm /var/service
-sudo sv once gdm
 
 # Install gnome-browser-connector (chrome-gnome-shell)
 
