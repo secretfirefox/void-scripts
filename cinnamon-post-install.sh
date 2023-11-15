@@ -81,16 +81,40 @@ sudo xbps-install cinnamon -y
 xdg-user-dirs-update
 xdg-user-dirs-gtk-update
 
-# Download the Mint-Yz theme and icons
+# Download and install the Mint-Yz theme and icons
 
 cd ~/Downloads
 
-git clone https://github.com/SebastJava/mint-yz-theme/releases/download/v4.1/mint-yz-theme_4.1.zip
+wget https://github.com/SebastJava/mint-yz-theme/releases/download/v4.1/mint-yz-theme_4.1.zip
+wget https://github.com/SebastJava/mint-yz-icons/releases/download/v4.0/mint-yz-icons_4.0.zip
+unzip -d ~/Downloads/mint-yz-theme_4.1/ mint-yz-theme_4.1.zip
+unzip -d ~/Downloads/mint-yz-icons_4.0/ mint-yz-icons_4.0.zip
+cd ~/Downloads/mint-yz-theme_4.1/
+sudo sh ~/Downloads/mint-yz-theme_4.1/INSTALLER.sh
+cd ~/Downloads/mint-yz-icons_4.0/
+sudo sh ~/Downloads/mint-yz-icons_4.0/INSTALLER.sh
 
-git clone https://github.com/SebastJava/mint-yz-icons/releases/download/v4.0/mint-yz-icons_4.0.zip
+# Update the icon cache for Mint-Yz themes
 
-unzip mint-yz-theme_4.1.zip
-unzip mint-yz-icons_4.0.zip
+cd 
+cd void-scripts
+sudo sh mint-yz-update-icon-cache.sh
 
+# Download Fox's preferred cursor
 
+sudo xbps-install breeze-snow-cursor-theme
 
+# Download and install Fox's wallpaper selection
+
+cd 
+git clone https://github.com/secretfirefox/fox-backgrounds
+cd fox-backgrounds
+bash generate-single-directory.sh
+
+# Download a terminal emulator, text editor, image viewer and a calculator
+
+sudo xbps-install xfce4-terminal pluma eom galculator 
+
+# Inform finished installation
+
+echo "Installation complete. Please restart the computer"
