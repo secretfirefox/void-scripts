@@ -29,7 +29,7 @@ sudo ln -s /etc/sv/NetworkManager /var/service
 
 # Install some recommended packages
 
-sudo xbps-install curl wget git xz unzip zip nano vim gptfdisk xtools mtools mlocate ntfs-3g fuse-exfat bash-completion linux-headers gtksourceview4 ffmpeg mesa-vdpau mesa-vaapi htop neofetch numlockx 7zip psmisc gnome-keyring ibus ibus-mozc cpupower -y
+sudo xbps-install curl wget git xz unzip zip nano vim gptfdisk xtools mtools mlocate ntfs-3g fuse-exfat bash-completion linux-headers gtksourceview4 ffmpeg mesa-vdpau mesa-vaapi htop neofetch numlockx 7zip psmisc gnome-keyring ibus ibus-mozc cpupower openjdk17-jre -y
 
 # Install some development packages (optional but recommended)
 
