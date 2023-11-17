@@ -29,7 +29,7 @@ sudo ln -s /etc/sv/NetworkManager /var/service
 
 # Install some recommended packages
 
-sudo xbps-install curl wget git xz unzip zip nano vim gptfdisk xtools mtools mlocate ntfs-3g fuse-exfat bash-completion linux-headers gtksourceview4 ffmpeg mesa-vdpau mesa-vaapi htop neofetch numlockx 7zip psmisc gnome-keyring ibus ibus-mozc -y
+sudo xbps-install curl wget git xz unzip zip nano vim gptfdisk xtools mtools mlocate ntfs-3g fuse-exfat bash-completion linux-headers gtksourceview4 ffmpeg mesa-vdpau mesa-vaapi htop neofetch numlockx 7zip psmisc gnome-keyring ibus ibus-mozc cpupower -y
 
 # Install some development packages (optional but recommended)
 
@@ -102,7 +102,11 @@ sudo sh mint-yz-update-icon-cache.sh
 
 # Download Fox's preferred cursor
 
-sudo xbps-install breeze-snow-cursor-theme
+sudo xbps-install breeze-snow-cursor-theme -y 
+
+# Install Fox's preferred font
+
+sudo xbps-install font-fira-otf -y
 
 # Download and install Fox's wallpaper selection
 
@@ -113,7 +117,11 @@ bash generate-single-directory.sh
 
 # Download a terminal emulator, text editor, image viewer and a calculator
 
-sudo xbps-install xfce4-terminal pluma eom galculator 
+sudo xbps-install xfce4-terminal pluma eom galculator -y
+
+# Install a video player, image editor and a pdf viewer
+
+sudo xbps-install celluloid gimp atril -y 
 
 # Inform finished installation
 
