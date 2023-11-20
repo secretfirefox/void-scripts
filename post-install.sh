@@ -26,10 +26,9 @@ sudo ln -s /etc/sv/dbus /var/service
 sudo ln -s /etc/sv/elogind /var/service
 sudo ln -s /etc/sv/NetworkManager /var/service
 
-
 # Install some recommended packages
 
-sudo xbps-install curl wget git xz unzip zip nano gptfdisk xtools mtools mlocate ntfs-3g fuse-exfat bash-completion linux-headers gtksourceview4 ffmpeg mesa-vdpau mesa-vaapi htop neofetch -y 
+sudo xbps-install curl wget git xz unzip zip nano gptfdisk xtools mtools mlocate ntfs-3g fuse-exfat bash-completion linux-headers ffmpeg mesa-vdpau mesa-vaapi cpupower htop neofetch -y
 
 # Install some development packages (optional but recommended)
 
@@ -37,7 +36,7 @@ sudo xbps-install autoconf automake bison m4 make libtool flex meson ninja optip
 
 # Install some important xdg utilities, to allow communication between apps
 
-sudo xbps-install xdg-desktop-portal xdg-desktop-portal-gtk xdg-user-dirs xdg-user-dirs-gtk xdg-utils -y
+sudo xbps-install xdg-desktop-portal xdg-user-dirs xdg-utils -y
 
 # Install PulseAudio and Pipewire/Wireplumber
 
@@ -75,6 +74,8 @@ sudo xbps-install firefox firefox-i18n-en-US -y
 sudo ln -s /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d
 sudo xbps-reconfigure -f fontconfig 
 
+# Inform finished installation
 
+echo "Installation complete. Please reboot the computer."
 
 
