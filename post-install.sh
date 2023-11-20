@@ -1,21 +1,20 @@
 # This script was written by Secret Firefox.
-# It facilitates post-installation in Void Linux.
-# This brings some useful tools you may need for a nice computation experience.
+# The purpose of this script is to make post-installation easy on Void Linux.
 # Enjoy!
 
 # Make sure the system is updated
 
-sudo xbps-install -Suy
+sudo xbps-install -Syu
 
-# Add the non-free repository
+# Add the nonfree repository
 
-sudo xbps-install -Rs void-repo-nonfree -y
+sudo xbps-install void-repo-nonfree -y
 
 # Install dbus, elogind, and Network Manager
 
 sudo xbps-install dbus elogind NetworkManager -y 
 
-# Turn off dhcpcd and wpa_supplicant in favor of NetworkManager
+# Switch from dhcpcd and wpa_supplicant to Network Manager
 
 sudo sv stop dhcpcd wpa_supplicant
 sudo touch /etc/sv/dhcpcd/down /etc/sv/wpa_supplicant/down
@@ -27,9 +26,10 @@ sudo ln -s /etc/sv/dbus /var/service
 sudo ln -s /etc/sv/elogind /var/service
 sudo ln -s /etc/sv/NetworkManager /var/service
 
+
 # Install some recommended packages
 
-sudo xbps-install curl wget git xz unzip zip nano vim gptfdisk xtools mtools mlocate ntfs-3g fuse-exfat bash-completion linux-headers gtksourceview4 ffmpeg mesa-vdpau mesa-vaapi htop neofetch numlockx 7zip psmisc -y
+sudo xbps-install curl wget git xz unzip zip nano gptfdisk xtools mtools mlocate ntfs-3g fuse-exfat bash-completion linux-headers gtksourceview4 ffmpeg mesa-vdpau mesa-vaapi htop neofetch -y 
 
 # Install some development packages (optional but recommended)
 
@@ -37,7 +37,7 @@ sudo xbps-install autoconf automake bison m4 make libtool flex meson ninja optip
 
 # Install some important xdg utilities, to allow communication between apps
 
-sudo xbps-install xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-gnome xdg-user-dirs xdg-user-dirs-gtk xdg-utils -y
+sudo xbps-install xdg-desktop-portal xdg-desktop-portal-gtk xdg-user-dirs xdg-user-dirs-gtk xdg-utils -y
 
 # Install PulseAudio and Pipewire/Wireplumber
 
@@ -61,6 +61,13 @@ cd runit-services
 sudo mv psd /etc/sv/
 sudo ln -s /etc/sv/psd /var/service/
 sudo chmod +x /etc/sv/psd/*
+cd ..
+rm -rf runit-services 
+
+# Install ntp and chronyd for syncing time
+
+sudo xbps-install ntp chrony
+sudo ln -s /etc/sv/chronyd /var/service/chronyd 
 
 # Install Firefox and set a better font for it
 
@@ -68,12 +75,6 @@ sudo xbps-install firefox firefox-i18n-en-US -y
 sudo ln -s /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d
 sudo xbps-reconfigure -f fontconfig 
 
-# Run some xdg-utilities to make GTK apps appear more ready
 
-xdg-user-dirs-update
-xdg-user-dirs-gtk-update
 
-# Reached the end of the install script
-
-echo "Installation complete. Reboot your computer."
 
