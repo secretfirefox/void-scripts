@@ -91,6 +91,11 @@ sudo xbps-install gnome gnome-browser-connector
 
 sudo ln -s /etc/sv/gdm /var/service
 
+# Fix the question mark sign being put on the Network icon
+
+sudo mkdir /etc/NetworkManager/conf.d
+echo -e "[connectivity]\nuri=https://1.1.1.1\ninterval=0" | sudo tee /etc/NetworkManager/conf.d/connectivity.conf
+
 # Inform finished install and reboot the computer
 
 echo "The installation is complete and the computer will now reboot."
