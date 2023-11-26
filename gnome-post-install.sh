@@ -66,7 +66,7 @@ rm -rf runit-services
 
 # Install ntp and chronyd to keep system time in sync
 
-sudo xbps-install ntp chrony
+sudo xbps-install ntp chrony -y
 sudo ln -s /etc/sv/chronyd /var/service/chronyd
 
 # Install Firefox and configure a better font for it
@@ -85,7 +85,7 @@ sudo xbps-install xorg wayland -y
 
 # Install GNOME and gnome-browser-connector, previously known as chrome-gnome-shell
 
-sudo xbps-install gnome gnome-browser-connector
+sudo xbps-install gnome gnome-browser-connector -y
 
 # Enable the GNOME Display Manager (GDM)
 
