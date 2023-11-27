@@ -37,11 +37,15 @@ sudo xbps-install autoconf automake bison m4 make libtool flex meson ninja optip
 
 # Install xdg portals and utilities to allow secure communication between apps
 
-sudo xbps-install xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-gnome xdg-user-dirs xdg-utils -y
+sudo xbps-install xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-gnome xdg-user-dirs xdg-user-dirs-gtk xdg-utils -y
 
-# Install PulseAudio, Pipewire and Wireplumber
+# Install Pipewire and Wireplumber
 
-sudo xbps-install pulseaudio pulseaudio-utils pulsemixer alsa-plugins-pulseaudio pipewire wireplumber -y
+#sudo xbps-install pipewire wireplumber -y
+#sudo ln -s /usr/share/applications/pipewire.desktop /etc/xdg/autostart
+#sudo ln -s /usr/share/applications/pipewire-pulse.desktop /etc/xdg/autostart
+#sudo ln -s /usr/share/applications/wireplumber.desktop /etc/xdg/autostart
+
 
 # Install cronie and enable its service 
 
