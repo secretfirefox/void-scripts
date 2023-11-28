@@ -41,10 +41,10 @@ sudo xbps-install xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-g
 
 # Install Pipewire and Wireplumber
 
-#sudo xbps-install pipewire wireplumber -y
-#sudo ln -s /usr/share/applications/pipewire.desktop /etc/xdg/autostart
-#sudo ln -s /usr/share/applications/pipewire-pulse.desktop /etc/xdg/autostart
-#sudo ln -s /usr/share/applications/wireplumber.desktop /etc/xdg/autostart
+sudo xbps-install pipewire wireplumber wireplumber-elogind -y
+sudo ln -s /usr/share/applications/pipewire.desktop /etc/xdg/autostart
+sudo ln -s /usr/share/applications/pipewire-pulse.desktop /etc/xdg/autostart
+sudo ln -s /usr/share/applications/wireplumber.desktop /etc/xdg/autostart
 
 
 # Install cronie and enable its service 
